@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+body {
+  background-color: #f8f9fa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.btn {
+  margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+  /* Estilos para pantallas pequeñas */
+  .container {
+    margin-top: 40px;
+  }
+
+  .btn {
+    margin-top: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#resultados {
+  max-height: 600px;
+  overflow-y: auto;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+#resultados .jugada-numero {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#resultados .jugada-info {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#resultados .jugada-info:last-child {
+  margin-bottom: 0;
+}
+
+#resultados .ganador {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+#resultados .perdedor {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+#resultados-finales {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#resultados-finales h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#resultados-finales .resultado-final {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
