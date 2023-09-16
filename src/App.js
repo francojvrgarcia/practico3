@@ -168,10 +168,7 @@ function App() {
                   )}
 
                   <div className="mt-4">
-                  {/* Utiliza el componente de resultados individuales */}
                   <ResultadosIndividuales resultadosIndividuales={resultadosIndividuales} />
-
-                  {/* Utiliza el componente de resultados finales */}
                   {resultadosFinales && (
                     <ResultadosFinales resultadosFinales={resultadosFinales} nombreJugador={nombreJugador} />
                   )}

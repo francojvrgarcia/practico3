@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+## Juego de Piedra, Papel o Tijera
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es un juego simple de Piedra, Papel o Tijera desarrollado en React. A continuación, se proporciona una breve explicación sobre cómo jugar y los detalles de implementación.
 
-## Available Scripts
+### Cómo Jugar
 
-In the project directory, you can run:
+1. Ingresa tu nombre en el campo correspondiente y selecciona la cantidad de jugadas que deseas realizar (de 1 a 5).
 
-### `npm start`
+2. Haz clic en "Comenzar" para iniciar el juego.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Se mostrará un cuadro de diálogo con las opciones de jugada: Piedra, Papel y Tijera. Selecciona una de estas opciones haciendo clic en el botón correspondiente.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. La computadora elegirá una jugada al azar.
 
-### `npm test`
+5. El juego determinará el resultado de la ronda (Empate, Gana la Computadora o Gana el Jugador) y mostrará el resultado de la ronda actual.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. Repite los pasos 3 a 5 hasta que hayas completado todas las rondas.
 
-### `npm run build`
+7. Después de la última ronda, se mostrarán los resultados finales, incluyendo la cantidad de rondas ganadas por la computadora, el jugador y el número de empates.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Detalles de Implementación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+El juego está implementado en React, un popular framework de JavaScript para crear interfaces de usuario interactivas. Aquí hay algunos detalles clave de la implementación:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Componentes**: El juego utiliza varios componentes de React para organizar la interfaz de usuario de manera modular. Estos componentes incluyen `GameSettings`, `ResultadosIndividuales`, y `ResultadosFinales`.
 
-### `npm run eject`
+2. **Estado del Juego**: Se utiliza el estado de React para rastrear información importante del juego, como el nombre del jugador, el número de jugadas, la jugada de la computadora, los resultados individuales y los resultados finales.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Selección Aleatoria de la Computadora**: La computadora elige su jugada de manera aleatoria utilizando el método `obtenerJugadaComputadora`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Determinación del Ganador**: La lógica para determinar al ganador se encuentra en la función `determinarGanador`. Compara las jugadas del jugador y la computadora para determinar el resultado de cada ronda.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. **Resultados Individuales**: Cada ronda del juego se registra en la lista de `resultadosIndividuales`, que luego se muestra al jugador.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. **Resultados Finales**: Después de todas las rondas, se calculan los resultados finales, incluyendo la cantidad de rondas ganadas por el jugador, la computadora y los empates.
 
-## Learn More
+7. **Validación de Entrada**: Antes de comenzar el juego, se realizan comprobaciones para asegurarse de que el jugador haya ingresado su nombre y seleccionado un número válido de jugadas.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+8. **Interfaz de Usuario Amigable**: La interfaz de usuario utiliza la biblioteca Bootstrap para estilizar los elementos y FontAwesome para mostrar íconos de piedra, papel y tijera.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+En resumen, este juego de Piedra, Papel o Tijera es una implementación interactiva en React que permite a los jugadores competir contra la computadora y ver los resultados individuales y finales. ¡Diviértete jugando!
