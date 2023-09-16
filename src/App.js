@@ -47,6 +47,7 @@ function App() {
         setOptionsVisible(false);
       }
 
+    
       if (jugadasRealizadas === numJugadas - 1) { // Calcula los resultados finales después de la última jugada
         const resultadoUltimaJugada = {
           jugador: nombreJugador,
@@ -54,10 +55,12 @@ function App() {
           jugadaComputadora: jugadaComputadora,
           resultado: resultado,
         };
-        
+
         // Calcula los resultados finales y guárdalos en estado, incluyendo la última jugada
         const resultadosFinales = calcularResultadosFinales([...resultadosIndividuales, resultadoUltimaJugada]);
+        
         setResultadosFinales(resultadosFinales);
+        console.log(resultadosFinales)
       }
   };
 
@@ -133,7 +136,7 @@ function App() {
           modalVisible={modalVisible}
         />
           {modalVisible && (
-            <div className="modal fade show" tabIndex="-1" style={{ display: 'block' }}>
+            <div className="modal fade show" tabIndex="-1" style={{ display: 'block' }} >
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -167,12 +170,14 @@ function App() {
                     </div>
                   )}
 
-                  <div className="mt-4">
-                  <ResultadosIndividuales resultadosIndividuales={resultadosIndividuales} />
-                  {resultadosFinales && (
+                  <div className="mt-4 scrollable-container" style={{ maxHeight: '800px', overflowY: 'scroll' }}>
+                  {typeof resultadosFinales === 'object' && Object.keys(resultadosFinales).length > 0 ? (
                     <ResultadosFinales resultadosFinales={resultadosFinales} nombreJugador={nombreJugador} />
-                  )}
-                </div>
+                  ) : null}
+
+                  <ResultadosIndividuales resultadosIndividuales={resultadosIndividuales} />
+                 
+                  </div>
                 </div>
               </div>
             </div>
